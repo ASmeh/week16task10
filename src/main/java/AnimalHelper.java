@@ -20,7 +20,7 @@ public class AnimalHelper {
         CriteriaQuery cq = cb.createQuery(Animal.class);
         Root<Animal> root = cq.from(Animal.class);
         Selection[] selections = new Selection[]{root.get("id"), root.get("age"),root.get("name"),root.get("tail")};
-        cq.select(cb.construct(Animal.class, selections)).where(cb.like(root.get("name"), "%Push%"));
+        cq.select(cb.construct(Animal.class, selections)).where(cb.like(root.get("name"), "%Dog%"));
         Query query = session.createQuery(cq);
         List<Animal> animalList = query.getResultList();
         session.close();
