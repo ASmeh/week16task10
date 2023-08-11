@@ -19,7 +19,7 @@ public class AnimalHelper {
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery cq = cb.createQuery(Animal.class);
         Root<Animal> root = cq.from(Animal.class);
-        Selection[] selections = new Selection[]{root.get("id"), root.get("name")};
+        Selection[] selections = new Selection[]{root.get("id"), root.get("name"),root.get("age"),root.get("tail")};
         cq.select(cb.construct(Animal.class, selections)).where(cb.like(root.get("name"), "%Push%"));
         Query query = session.createQuery(cq);
         List<Animal> authorList = query.getResultList();
