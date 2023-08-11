@@ -19,8 +19,8 @@ public class Main {
             animalHelper.addAnimal(animal);
         }
 
-        List<Animal> authorList = animalHelper.getAnimalList();
-        Iterator var8 = authorList.iterator();
+        List<Animal> animalList = animalHelper.getAnimalList();
+        Iterator var8 = animalList.iterator();
 
         while(var8.hasNext()) {
             Animal animal = (Animal)var8.next();
