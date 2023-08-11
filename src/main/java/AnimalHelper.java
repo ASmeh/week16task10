@@ -22,9 +22,9 @@ public class AnimalHelper {
         Selection[] selections = new Selection[]{root.get("id"), root.get("age"),root.get("name"),root.get("tail")};
         cq.select(cb.construct(Animal.class, selections)).where(cb.like(root.get("name"), "%Push%"));
         Query query = session.createQuery(cq);
-        List<Animal> authorList = query.getResultList();
+        List<Animal> animalList = query.getResultList();
         session.close();
-        return authorList;
+        return animalList;
     }
 
     public Animal getAnimalById(long id) {
